@@ -1,4 +1,4 @@
-### Ex02 Outlier Detection
+# Ex02 Outlier Detection
 
 ## AIM:
 You are given bhp.csv which contains property prices in the city of banglore, India. You need to examine price_per_sqft column and do following,
@@ -33,7 +33,7 @@ df.head()
 #BEFORE REMOVING OUTLIER
 sns.boxplot(y='price_per_sqft',data=df)
 
-# PERFORMING IQR METHOD
+## PERFORMING IQR METHOD
 q1=df['price_per_sqft'].quantile(0.25)
 q3=df['price_per_sqft'].quantile(0.75)
 IQR=q3-q1
