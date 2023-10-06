@@ -1,6 +1,7 @@
 # Ex02 Outlier Detection
 
 ## AIM:
+```
 You are given bhp.csv which contains property prices in the city of banglore, India. You need to examine price_per_sqft column and do following,
 
 (1) Remove outliers using IQR
@@ -9,17 +10,26 @@ You are given bhp.csv which contains property prices in the city of banglore, In
 (4) for the data set height_weight.csv find the following
 (i) Using IQR detect weight outliers and print them
 (ii) Using IQR, detect height outliers and print them
+```
 ##  Explanation:
-An Outlier is an observation in a given dataset that lies far from the rest of the observations. That means an outlier is vastly larger or smaller than the remaining values in the set. An outlier is an observation of a data point that lies an abnormal distance from other values in a given population. (odd man out). Outliers badly affect mean and standard deviation of the dataset. These may statistically give erroneous results.
+```
+An Outlier is an observation in a given dataset that lies far from the rest of the observations. 
+That means an outlier is vastly larger or smaller than the remaining values in the set. 
+An outlier is an observation of a data point that lies an abnormal distance from other values in a given population. (odd man out). 
+Outliers badly affect mean and standard deviation of the dataset. These may statistically give erroneous results.
+```
 
 ## Algorithm:
+```
 Step1: Read the given Data.
 Step2: Get the information about the data.
 Step3: Detect the Outliers using IQR method and Z score.
 Step4: Remove the outliers.
 Step5: Plot the datas using Box Plot.
+```
 ## Code:
 ## bhp.csv:
+```
 import pandas as pd
 import seaborn as sns
 import numpy as np
@@ -33,7 +43,7 @@ df.head()
 #BEFORE REMOVING OUTLIER
 sns.boxplot(y='price_per_sqft',data=df)
 
-## PERFORMING IQR METHOD
+#PERFORMING IQR METHOD
 q1=df['price_per_sqft'].quantile(0.25)
 q3=df['price_per_sqft'].quantile(0.75)
 IQR=q3-q1
@@ -50,7 +60,10 @@ new2=df[(z<3)]
 
 #AFTER REMOVING OUTLIER using Zscore method
 sns.boxplot(y="price_per_sqft",data=new2)
-height_weight.csv:
+```
+
+## height_weight.csv:
+```
 import pandas as pd
 import seaborn as sns
 from google.colab import files
@@ -83,6 +96,7 @@ weight_high = weight_q3 + 1.5 * weight_IQR
 weight_new=df[((df['weight']>=weight_low)&(df['weight']<=weight_high))]
 #AFTER REMOVING OUTLIER in WEIGHT
 sns.boxplot(y='weight',data=weight_new)
+```
 ## Output:
 bhp.csv:
 weight_height.csv:
