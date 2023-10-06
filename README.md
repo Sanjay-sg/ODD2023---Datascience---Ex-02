@@ -98,7 +98,7 @@ weight_new=df[((df['weight']>=weight_low)&(df['weight']<=weight_high))]
 sns.boxplot(y='weight',data=weight_new)
 ```
 ## Output:
-bhp.csv:
-weight_height.csv:
+### bhp.csv:
+### weight_height.csv:
 ## Result:
 Hence the given set of data is read and the outliers are removed using the IQR method and Zscore method.
